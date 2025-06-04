@@ -19,19 +19,19 @@ function HeroSection() {
         </div>
         <div className="pp-points-container">
             <div className="pp-points"> 
-                Software Engineering Personal projects, improving data security.
+                Software Engineering Personal projects, improving data security, training AI models.
                     &nbsp; <i class="fa-solid fa-user-shield"></i>
             </div>
             <div className="pp-points"> 
-                Machine Learning research at Eduvos.
+                Machine Learning research & SWE studies at Eduvos.
                     &nbsp; <i class="fa-solid fa-brain"></i>
             </div>
             <div className="pp-points">
-                Oncology Research at Mass-General, correlating morphology with treatment resistance in pancreatic cancer cells
-                    &nbsp; <i class="fa-solid fa-dna"></i>
+                working on finding an internship
+                     
             </div>
             <div className="pp-points"> 
-                Teaching CS61: Systems Programming and Machine Organization at Harvard, as Teaching Fellow
+                Tutoring students at my college
                     &nbsp; <i class="fa-solid fa-computer"></i>
             </div>
         </div>
