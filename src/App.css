@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --title-font-size: 35px;
+    --text-font-size: 18px;
+    --text-font-size-mobile: 14px;
+    --paragraph-color: #b7c3ce;
+    --title-color: #ffcb9a;
+  }
+

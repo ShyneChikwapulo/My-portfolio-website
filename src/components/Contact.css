@@ -1,0 +1,107 @@
+.contact-container {
+    height: fit-content;
+    min-height: 700px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c3531;
+    object-fit: contain;
+    z-index: 1000;
+  }
+
+  .contact-center-container {
+    width: 90%;
+    max-width: 700px;
+    padding-top: 100px;
+    height: inherit;
+    margin-top: 100px;
+    z-index: inherit;
+    position: relative;
+    text-align: center;
+    /* border: 2px solid #fff; */
+  }
+
+  .contact-h1 {
+    width: 100%;
+    font-size: 30px;
+    font-family: 'Source Code Pro', monospace;;
+    color: #ffcb9a;
+  }
+  .contact-h2 {
+    padding-top: 10px;
+    width: 100%;
+    font-size: 40px;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+  }
+
+  .contact-p {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--paragraph-color);
+    font-size: 18px;
+  }
+
+  .contact-email-button {
+    background-color: #2c3531;
+    border: 0.5px solid #D9B08C;
+    border-radius: 5%;
+    width: 100px;
+    height:fit-content;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .email-text {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 50px;
+    font-size: 1.05rem;
+    vertical-align: center;
+  }
+  .contact-email-button:hover .email-text {
+    color: #ffcb9a;
+  }
+
+  .contact-socials {
+    padding-top: 40px;   
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: space-between;
+  }
+
+  .contact-social-button {
+    text-align: center;
+    display: table;
+    clip-path: circle();
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #a3d1f9;
+    text-decoration: none;
+  }
+  .contact-social-icon {
+    display: table-cell;
+    vertical-align: middle;
+    color: #2c3531;
+  }
+  .contact-social-button:hover {
+    background-color: #ffcb9a;
+  }
+
+  
+ 
+  

@@ -1,0 +1,182 @@
+    .about-container {
+      height: fit-content;
+      min-height: 800px;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2c3531;
+      object-fit: contain;
+      z-index: 1000;
+    }
+
+    .about-center-container {
+        height: inherit;
+        max-width: 900px;
+        margin-top: 100px;
+        z-index: inherit;
+    }
+    
+    .aboutMe-h1 {
+      margin-top: 0px;
+      font-family: 'Source Code Pro', monospace;
+      color: #ffcb9a;
+      font-size: var(--title-font-size);
+      position: relative;
+      width: max-content;
+      z-index: 10;
+    }
+    .aboutMe-h1::before,
+    .aboutMe-h1::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .aboutMe-h1::before {
+      background: var(--background-color);
+      animation: typewriter var(--typewriter-speed) steps(9) forwards;
+    }
+    .aboutMe-h1::after {
+      width: 0.05em;
+      background: #ffcb9a;
+      animation: 
+        typewriter var(--typewriter-speed) steps(12) forwards,
+        blink 1s step-start infinite;
+    }
+    
+    .aboutMeImage-wrapper-container {
+      position: relative;
+      z-index: inherit;
+      max-width: 350px;
+      width: 350px;
+      height: 95%;
+    }
+
+    .aboutMeImage-wrapper {
+      position: absolute;
+      max-width: inherit;
+      width: inherit;
+      height: inherit;
+      background-size: cover;
+      background-position: center;
+      border-radius: 5%;
+      animation: intro 0.8s ease-out;;
+      z-index: inherit;
+    }
+    .aboutMeImage-wrapper::after,
+    .aboutMeImage-wrapper::before {
+      content: "";
+      position: absolute;
+      border-radius: 5%;
+      max-width: 350px;
+      height: 100%;
+      width: 350px;
+    }
+    .aboutMeImage-wrapper::after {
+      top: 0;
+      left: 0;
+      /* background: #ffcb9a; */
+      opacity: 0.4;
+      /* filter: brightness(150%) contrast(200%); */
+      z-index: 1;
+    } 
+    .aboutMeImage-wrapper::before {
+      top: 20px;
+      left: -20px;
+      background: #ffcb9a;
+      z-index: -1000;
+      transition: all 0.2s ease;
+    }
+    .aboutMeImage-wrapper:hover::before {
+      top: 10px;
+      left: -10px;
+      transition: all 0.2s ease;
+    }
+    .aboutMeImage-wrapper:hover::after {
+      opacity: 0;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 50px;
+      flex-direction: row;
+      margin-top: 50px;
+    }
+    .aboutMe-p {
+      color: var(--paragraph-color);
+      font-family: 'Open Sans', sans-serif;
+      width: 100%;
+      max-width: 850px;
+      font-size: var(--text-font-size);
+    }
+
+    .technology-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 300px));
+      gap: 12px 20px;
+      padding-top: 20px;
+    }
+    .tech-li {
+      padding-left: 30px;
+      position: relative;
+    }
+    .tech-li::before {
+      content: "▹";
+      position: absolute;
+      left: 0px;
+      color: #ffcb9a;
+    }
+
+    
+    @media screen and (max-width: 950px) {
+      .about-content {
+        display: block;
+        grid-template-columns: 1fr 2fr;
+      }
+      .aboutMeImage-wrapper-container {
+        display: block;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        max-height: 50%;
+        width: 350px;
+        height: 350px;
+      }
+      .overlay {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .aboutMe-h1 {
+        font-size: var(--title-font-size);
+        padding-left: 5vw;
+      }
+      .aboutMe-p {
+        padding: 10% 5% 5% 5%;
+      }
+    }
+  
+    @media screen and (max-width: 400px) {
+      .aboutMeImage-wrapper-container {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 15px;
+      }
+      .aboutMeImage-wrapper::after, 
+      .aboutMeImage-wrapper::before, 
+      .aboutMeImage-wrapper {
+        width: inherit;
+        height: inherit;
+      }
+      .aboutMe-p {
+        font-size: var(--text-font-size-mobile);
+      }
+    }
+    

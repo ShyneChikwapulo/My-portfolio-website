@@ -1,0 +1,236 @@
+:root {
+  --background-color: #2c3531;
+  --typewriter-speed: 1.5s;
+}
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+  .hero-container {
+    min-height: 95vh;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3531;
+    object-fit: contain;
+    z-index: 1000;
+  }
+  .hero-center-container {
+    max-width: 1000px;
+    width: 65%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: inherit;
+    position: relative;
+  }
+
+  .heroImage-wrapper {
+    z-index: inherit;
+  }
+  .heroImage {
+    width: 150px;
+    clip-path: circle();
+    vertical-align: bottom;
+    z-index: inherit;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .heroImage:hover {
+    top: -10px;
+  }
+  
+  
+  .hero-h1 {
+    margin-top: 20px;
+    font-family: 'Source Code Pro', monospace;
+    color: #fff;
+    font-size: 30px;
+    position: relative;
+    width: max-content;
+    z-index: 10;
+  }
+  .hero-h1::before,
+  .hero-h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .hero-h1::before {
+    background: var(--background-color);
+    animation: typewriter var(--typewriter-speed) steps(23) forwards;
+  }
+  .hero-h1::after {
+    width: 0.05em;
+    background: #fff;
+    animation: 
+      typewriter var(--typewriter-speed) steps(23) forwards,
+      blink 1s step-start infinite, 
+      disappear 0.1s 1 var(--typewriter-speed) forwards;
+  }
+  
+  p {
+    margin-top: 8px;
+    color: #ffcb9a;
+    font-size: 80px;
+    font-family: 'source code pro', monospace;
+    position: relative;
+    z-index: 10;
+  }
+  p::before,
+  p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  p::before {
+    background: var(--background-color);
+    animation: typewriter var(--typewriter-speed) steps(9) var(--typewriter-speed) forwards;
+  }
+  p::after {
+    opacity: 0;
+    width: 0.05em;
+    background: #ffcb9a;
+    animation: 
+      appear 0.2s steps(1) var(--typewriter-speed) forwards,
+      typewriter var(--typewriter-speed) steps(9) var(--typewriter-speed) forwards,
+      blink 1s step-start var(--typewriter-speed) infinite;
+  }
+  p:active::after  {
+    background-color: #2c3531;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .pp {
+    color: var(--paragraph-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-top: 50px;
+    opacity: 0;
+    animation: appear 1.5s 2.5s forwards;
+    position: relative;
+  }
+  .pp-points-container {
+    display: relative;
+    width: 100%;
+  }
+  .pp-points {
+    align-items: left;
+    color: var(--paragraph-color);
+    width: fit-content;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 18px;
+    opacity: 0;
+    animation: appear 1.5s 3s forwards;
+  }
+  .pp-points::before {
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: #ffcb9a;
+  }
+  .quote {
+    color: #ffcb9a;
+  }
+
+
+  
+  /* @keyframes intro {
+    0% {
+      opacity: 0;
+      z-index: 1;
+    }
+    75% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  } */
+
+  @keyframes jump {
+    to {
+      padding-bottom: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 950px) {
+    .hero-center-container {
+      width: 90%;
+    }
+    .heroImage {
+      margin-top: 100px;
+    }
+    .hero-h1 {
+      font-size: 20px;
+      margin-top: 50px;
+    }
+    .p {
+      font-size: 12px;
+    }
+    .pp {
+      font-size: 17px;
+      width: 100%;
+    }
+    .pp-points {
+      font-size: 17px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .heroImage {
+      width: 30vw;
+    }
+    .hero-h1 {
+      font-size: 5vw;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 40px;
+    }
+    .pp {
+      font-size: 15px;
+    }
+    .pp-points {
+      font-size: 15px;
+    }
+  }
+  
