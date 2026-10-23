@@ -1,11 +1,11 @@
 import React from 'react'
 import '../App.css';
-import './Project.css';
+import './Experience.css';
 import { useState } from 'react';
 
 function Experience() {
 
-    const [toggleState, setToggleState] = useState(7);
+    const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
         setToggleState(index);

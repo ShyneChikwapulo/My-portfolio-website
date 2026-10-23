@@ -1,17 +1,15 @@
-import React from "react";
-
+import React from 'react';
 import '../App.css';
 import './Credit.css';
 
-
 function Credit() {
-    return (
-        <div className="credit-container">
-            <div className="credit-center-container">
-                Designed &amp; Created by Shine chikwapulo
-            </div>
-        </div>
-    );
+  return (
+    <footer className="credit-container">
+      <div className="credit-center-container">
+        &copy; 2026 Shine Chikwapulo. Designed &amp; built by me.
+      </div>
+    </footer>
+  );
 }
 
-export default Credit
+export default Credit;
