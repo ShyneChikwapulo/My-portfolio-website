@@ -179,4 +179,21 @@
         font-size: var(--text-font-size-mobile);
       }
     }
-    
+.aboutMe-p p + p { margin-top: 1em; }
+.about-skills {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+}
+.skill-group-title {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.skill-group-items { font-size: 15px; line-height: 1.6; }
+.about-resume-link { color: var(--accent); }
+@media screen and (max-width: 950px) {
+  .about-skills { grid-template-columns: 1fr; }
+}
