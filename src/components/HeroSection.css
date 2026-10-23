@@ -1,5 +1,5 @@
 :root {
-  --background-color: #2c3531;
+  --background-color: var(--bg);
   --typewriter-speed: 1.5s;
 }
 @keyframes typewriter {
@@ -17,12 +17,12 @@
   .hero-container {
     min-height: 95vh;
     height: fit-content;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2c3531;
+    background-color: var(--bg);
     object-fit: contain;
     z-index: 1000;
   }
@@ -88,7 +88,7 @@
   
   p {
     margin-top: 8px;
-    color: #ffcb9a;
+    color: var(--accent);
     font-size: 80px;
     font-family: 'source code pro', monospace;
     position: relative;
@@ -110,14 +110,14 @@
   p::after {
     opacity: 0;
     width: 0.05em;
-    background: #ffcb9a;
+    background: var(--accent);
     animation: 
       appear 0.2s steps(1) var(--typewriter-speed) forwards,
       typewriter var(--typewriter-speed) steps(9) var(--typewriter-speed) forwards,
       blink 1s step-start var(--typewriter-speed) infinite;
   }
   p:active::after  {
-    background-color: #2c3531;
+    background-color: var(--bg);
   }
   
   @keyframes appear {
@@ -165,10 +165,10 @@
     content: "▹";
     position: absolute;
     left: 0px;
-    color: #ffcb9a;
+    color: var(--accent);
   }
   .quote {
-    color: #ffcb9a;
+    color: var(--accent);
   }
 
 

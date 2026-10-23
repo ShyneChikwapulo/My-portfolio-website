@@ -3,7 +3,7 @@
 }
 
 .navbar {
-    background: #2c3531;
+    background: var(--bg);
     height: var(--navbar-height);
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@
   .hidden-arrow {
     display: inline;
     flex-direction: row;
-    color: #D9B08C;
+    color: var(--accent-dim);
     opacity: 0;
     transition: all 0.3s;
     position: absolute;
@@ -66,14 +66,14 @@
     z-index: 1;
     opacity: 0;
     transition: all 0.3s;
-    border-top: 1px solid #ffcb9a;
-    border-bottom: 1px solid #ffcb9a;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
     transform: scale(0.1, 1) translateY(5px);
   }
   .navbar-logo:hover {
     display: flex;
     flex-direction: row;
-    color: #D9B08C;
+    color: var(--accent-dim);
   }
   .navbar-logo:hover::before {
     opacity: 1;
@@ -114,12 +114,12 @@
 
   .nav-resume {
     position: absolute;
-    border: 0.5px solid #D9B08C;
+    border: 0.5px solid var(--accent-dim);
     border-radius: 5%;
     right: 0;
     margin-right: 20px;
     width: 100px;
-    background-color: #2c3531;
+    background-color: var(--bg);
   }
   .resume-link {
     color: #fff;
@@ -134,7 +134,7 @@
     position: relative;
   }
   .resume-link:hover {
-    color: #ffcb9a;
+    color: var(--accent);
     /* transform: scale(1,1); */
   }
   
@@ -158,13 +158,13 @@
     z-index: 1;
     opacity: 0;
     transition: all 0.3s;
-    border-top: 1px solid #ffcb9a;
-    border-bottom: 1px solid #ffcb9a;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
     transform: scale(0.1, 1);
   }
   
   .nav-links:hover {
-    color: #ffcb9a;
+    color: var(--accent);
   }
   .nav-links:hover::before {
     opacity: 1;
@@ -199,7 +199,7 @@
       top: 100px;
       padding-top: 20px;
       display: inline;
-      background: #D9B08C;
+      background: var(--accent-dim);
       opacity: 0.9;
       height: 380px;
       transition-property: height;
@@ -217,14 +217,14 @@
       width: 100%;
       align-items: center;
       justify-content: center;
-      color: #2c3531;
+      color: var(--bg);
     }
     .nav-links.active {
       display: flex;
     }
     .nav-resume {
-      border: 2px solid #2c3531;
-      background-color: #D9B08C;
+      border: 2px solid var(--bg);
+      background-color: var(--accent-dim);
       position: relative;
       margin: auto;
       width: 100px;
@@ -241,7 +241,7 @@
       transition: all 1s; 
     }
     .resume-link {
-      color: #2c3531;
+      color: var(--bg);
       display: none;
     }
     .resume-link.active {

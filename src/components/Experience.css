@@ -1,11 +1,11 @@
 .experience-container {
     height: fit-content;
     min-height: 700px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #2c3531;
+    background-color: var(--bg);
     object-fit: contain;
     z-index: 1000;
   }
@@ -23,7 +23,7 @@
     margin-top: 0px;
     margin-bottom: 30px;
     font-family: 'Source Code Pro', monospace;
-    color: #ffcb9a;
+    color: var(--accent);
     font-size: var(--title-font-size);
     position: relative;
     width: max-content;
@@ -44,7 +44,7 @@
   }
   .experience-h1::after {
     width: 0.05em;
-    background: #ffcb9a;
+    background: var(--accent);
     animation: 
       typewriter var(--typewriter-speed) steps(11) forwards,
       blink 1s step-start infinite;
@@ -83,7 +83,7 @@
   }
 
   .tabs {
-    background-color: #2c3531;
+    background-color: var(--bg);
     color: var(--paragraph-color);;
     text-align: left;
     font-size: inherit;
@@ -93,12 +93,12 @@
     transition: transform 0.5s;
   }
   .active-tabs {
-    color: #ffcb9a;
-    background-color: #323d38;
+    color: var(--accent);
+    background-color: var(--bg-elevated);
   }
   .tabs:hover {
-    background-color: #323d38;
-    border-left: 2px solid #ffcb9a;
+    background-color: var(--bg-elevated);
+    border-left: 2px solid var(--accent);
     transform: translate(-10%);
     transform: all 1s;
   }
@@ -117,11 +117,11 @@
     overflow-wrap: break-all;
   }
   .experience-content-company {
-    color: #ffcb9a;
+    color: var(--accent);
     text-decoration: none;
   }
   .experience-content-company-link {
-    color: #ffcb9a;
+    color: var(--accent);
     text-decoration: inherit;
     display: inline-block;
   }
@@ -139,7 +139,7 @@
     content: "▹";
     position: absolute;
     left: 0px;
-    color: #ffcb9a;
+    color: var(--accent);
   }
   .content {
     display: none;
@@ -179,7 +179,7 @@
     .tabs:hover {
         transform: translate(0, -10%);
         border-left: none;
-        border-top: 2px solid #ffcb9a;
+        border-top: 2px solid var(--accent);
     }
     .experience-content-container {
         margin: auto;
