@@ -1,81 +1,68 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import './Navbar.css';
-// import Resume from '../resume.pdf';
+import { RESUME_URL, RESUME_FILENAME } from '../config';
 
+const LINKS = [
+  { to: '#about', label: 'About' },
+  { to: '#experience', label: 'Experience' },
+  { to: '#work', label: 'Work' },
+  { to: '#contact', label: 'Contact' },
+];
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
-    const [click, setClick] = useState(false);
-    const [lastScrollPos, setLastScrollPos] = useState(100);
-    const [bodyOffset, setBodyOffset] = useState(document.body.getBoundingClientRect());
-    const [scrollDirection, setScrollDirection] = useState("down");
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 100) setHidden(false);
+      else if (y > lastY + 4) setHidden(true);
+      else if (y < lastY - 4) setHidden(false);
+      lastY = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    const handleClick = () => setClick(!click);
+  const close = () => setOpen(false);
+  const linkClass = open ? 'nav-links active' : 'nav-links';
 
-    const closeMobileMenu = () => setClick(false);
+  return (
+    <nav className={hidden && !open ? 'navbar hide' : 'navbar'} aria-label="Main">
+      <HashLink to="#top" className="navbar-logo">
+        <div>
+          Shine Chikwapulo
+          <div className="hidden-arrow">&nbsp; <i className="fa-solid fa-arrow-right-long" aria-hidden="true"></i></div>
+        </div>
+      </HashLink>
 
-    const scrollListner = () => {
-        // make navbar not move for the first 100px
-        if (document.body.getBoundingClientRect().top < -100) {
-            setBodyOffset(document.body.getBoundingClientRect());
-        }
-        console.log(document.body.getBoundingClientRect());
-        
-        // if last scrolled position is higher, then it's scroll up, else it's scroll down
-        setScrollDirection(lastScrollPos >= -bodyOffset.top ? "down" : "up");
-        // continue setting the top screen position
-        setLastScrollPos(-bodyOffset.top);
-    }
+      <button
+        className="menu-icon"
+        onClick={() => setOpen(!open)}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        style={{ background: 'none', border: 'none' }}
+      >
+        <i className={open ? 'fas fa-times' : 'fas fa-bars'} aria-hidden="true" />
+      </button>
 
-    useEffect(() => {
-        window.addEventListener('scroll', 
-        scrollListner);
-        return (() => {
-            window.removeEventListener('scroll', scrollListner);
-        })
-    });
-
-    return(
-        <>
-            <nav className={scrollDirection === "down" ? 'navbar' : 'navbar hide'}>
-                
-                <HashLink to='#' className='navbar-logo'>
-                    <div>Shine Chikwapulo<div className="hidden-arrow">&nbsp; <i class="fa-solid fa-arrow-right-long"></i></div></div>
-                </HashLink>
-                
-                <div className="menu-icon" onClick={handleClick}>
-                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                </div>
-                
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item'>
-                        <HashLink to='#about' className={click ? 'nav-links active' : 'nav-links'} onClick={closeMobileMenu}>
-                            About
-                        </HashLink>
-                    </li>
-                    <li className='nav-item'>
-                        <HashLink to='#experience' className={click ? 'nav-links active' : 'nav-links'} onClick={closeMobileMenu}>
-                            Experience
-                        </HashLink>
-                    </li>
-                    <li className='nav-item'>
-                        <HashLink to='#work' className={click ? 'nav-links active' : 'nav-links'} onClick={closeMobileMenu}>
-                            Work
-                        </HashLink>
-                    </li>
-                    <li className='nav-item'>
-                        <HashLink to='#contact' className={click ? 'nav-links active' : 'nav-links'} onClick={closeMobileMenu}>
-                            Contact
-                        </HashLink>
-                    </li>
-                
-                </ul>
-
-
-            </nav>
-        </>
-    );
+      <ul className={open ? 'nav-menu active' : 'nav-menu'}>
+        {LINKS.map(({ to, label }) => (
+          <li className="nav-item" key={to}>
+            <HashLink to={to} className={linkClass} onClick={close}>{label}</HashLink>
+          </li>
+        ))}
+        <li className="nav-item">
+          <a className={`${linkClass} nav-resume-link`} href={RESUME_URL} download={RESUME_FILENAME} onClick={close}>
+            Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;

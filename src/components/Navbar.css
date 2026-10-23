@@ -275,3 +275,10 @@
       font-size: 2rem;
     }
   }
+/* Resume button */
+.nav-menu { grid-template-columns: repeat(5, auto); }
+.nav-resume-link { border: 1px solid var(--accent); border-radius: 6px; }
+.nav-resume-link:hover { background: rgba(61, 224, 208, 0.12); }
+@media screen and (max-width: 950px) {
+  .nav-resume-link { border-color: var(--bg); }
+}
