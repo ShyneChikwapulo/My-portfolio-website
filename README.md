@@ -10,14 +10,17 @@ My personal portfolio: a single-page React site covering my background, experien
 
 ## What's in it
 
-- Sections for hero, about, experience, work and contact.
+- Hero, about, experience, projects and contact sections.
+- Data-driven project cards (`src/data/projects.js`) with live demo and GitHub links.
+- Downloadable resume (`public/Shine-Chikwapulo-Resume.pdf`).
+- Aqua theme driven by CSS variables in `src/App.css`.
 - Scroll animations with AOS.
-- SEO setup: meta and Open Graph tags (react-helmet-async), JSON-LD structured data, `sitemap.xml` and `robots.txt`.
+- SEO: meta and Open Graph tags and JSON-LD in `public/index.html`, plus `sitemap.xml` and `robots.txt`.
 - Deployed on Netlify.
 
 ## Tech stack
 
-React 18 (Create React App), React Router 6, react-helmet-async, AOS, CSS.
+React 18 (Create React App), React Router 6, AOS, CSS.
 
 ## Getting started
 
@@ -31,20 +34,16 @@ npm start        # http://localhost:3000
 npm run build    # production build in /build
 ```
 
-## Project structure
+## Updating content
 
-```text
-public/        index.html, sitemap.xml, robots.txt, static assets
-src/
-  components/  Navbar, HeroSection, AboutMe, Experience, Project, Contact, Credit
-  App.js
-```
+- **Projects:** edit `src/data/projects.js`. Screenshots go in `public/projects/`.
+- **Resume:** replace `public/Shine-Chikwapulo-Resume.pdf`.
+- **Colours:** change the variables at the top of `src/App.css`.
 
 ## Roadmap
 
-- Add ML Advisor, Inkrepublik and The Butcher's Mermaid to the projects section
-- Update the contact section's availability text
-- Add a downloadable CV
+- Add Resume Studio once it's ready to show
+- Add screenshots for The Butcher's Mermaid and African Nations League
 - Move from Create React App to Vite
 - Add basic tests
 
